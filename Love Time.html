@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love time</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Tangerine", cursive;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+  
+   background-color: #c8a2c8; /* Lilac background */
+    }
+
+    #heart-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    #neon-heart {
+      width: 200px;
+      height: 180px;
+      position: relative;
+      animation: glowing 2s infinite;
+    }
+
+
+    #neon-heart::before,
+    #neon-heart::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      width: 100px;
+      height: 160px;
+      background-color: #ff0055; /* Neon pink color */
+      border-radius: 50px 50px 0 0;
+    }
+
+    #neon-heart::before {
+      left: 100px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    #neon-heart::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    #heart-text {
+      font-family: "Tangerine", cursive;
+
+
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 160%; /* Increase font size for the text at the top */
+      font-weight: bold; /* Make it bold */
+      color: #fff; /* White text color */
+    }
+
+    #clock {
+      font-size: 24px;
+      color: #fff; /* White text for better visibility */
+      background-color: #28292d; /* Semi-transparent black background for contrast */
+      padding: 20px;
+      border-radius: 10px;
+      position: absolute;
+      inset: 2px;
+      z-index: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .time-number {
+      color: #FF00FF; /* Magenta for days */
+    }
+
+    .time-number:nth-child(2) {
+      color: #00FFFF; /* Cyan for hours */
+    }
+
+    .time-number:nth-child(3) {
+      color: #FFFF00; /* Yellow for minutes */
+    }
+
+    .time-number:nth-child(4) {
+      color: #00FF00; /* Green for seconds */
+    }
+
+    @keyframes glowing {
+      0% {
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0055, 0 0 40px #ff0055, 0 0 70px #ff0055,
+          0 0 80px #ff0055, 0 0 100px #ff0055;
+      }
+      50% {
+        box-shadow: none;
+      }
+      100% {
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0055, 0 0 40px #ff0055, 0 0 70px #ff0055,
+          0 0 80px #ff0055, 0 0 100px #ff0055;
+      }
+    }
+
+    .Light {
+      position: relative;
+      width: 200px;
+      height: 50px;
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .Light::before,
+    .Light::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 50px;
+      top: -50%;
+      left: -50%;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+    }
+
+    .Light::before {
+      background: linear-gradient(60deg, transparent, #43f3ff, #43f3ff);
+    }
+
+    .Light::after {
+      background: linear-gradient(60deg, transparent, #d9138a, #d9138a);
+      animation-delay: 3s;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .snowflake {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      animation: snowfall ease-out infinite;
+      top: 0;
+    }
+
+    .snowflake img {
+      width: 100%;
+      height: 100%;
+    }
+
+       @keyframes snowfall {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(100vh) translateX(20px) rotate(360deg);
+      }
+      100% {
+        transform: translateY(200vh) translateX(0) rotate(720deg);
+      }
+    }
+
+    /* Generate random position for each snowflake */
+
+    
+
+    .snowflake:nth-child(13) { left: 5%; animation-duration: 10s; 
+      
+    }
+    .snowflake:nth-child(5) { left: 15%; animation-duration: 15s;
+    }
+    .snowflake:nth-child(6) { left: 25%; animation-duration: 12s; }
+    .snowflake:nth-child(7) { left: 35%; animation-duration: 10s; }
+        .snowflake:nth-child(8) { left: 45%; animation-duration: 15s; }
+    .snowflake:nth-child(9) { left: 55%; animation-duration: 20s; }
+    .snowflake:nth-child(10) { left: 65%; animation-duration: 8s; }
+     .snowflake:nth-child(11) { left: 75%; animation-duration: 20s; }
+    .snowflake:nth-child(12) { left: 85%; animation-duration: 16s; }
+  
+  /*butterfly*/
+  .gif-container {
+    position: absolute;
+  width: 200px; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  overflow: hidden; /* Hide any overflow beyond specified dimensions */
+  background-color: ;
+  top: 60px;
+  
+}
+
+.gif-container img {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+    
+  
+    
+  
+  }
+  </style>
+</head>
+
+
+
+
+<body>
+
+
+  
+  <div id="heart-container">
+    <div id="neon-heart"></div>
+    <div id="heart-text">Nadi & Chan</div>
+  </div>
+  <div class="Light">
+    <div id="clock">
+      <span class="time-number">Days</span>d 
+      <span class="time-number">Hours</span>h 
+      <span class="time-number">Minutes</span>m 
+      <span class="time-number">Seconds</span>s
+    </div>
+  </div>
+  
+    <!--butterfly--->
+  <div class="gif-container">
+  <img src="https://steamuserimages-a.akamaihd.net/ugc/1834669014194993065/DADB3575B71B6DC3F4B5D0B06918435590AE531A/?imw=128&imh=128&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Your GIF">
+</div>
+  <script>
+    // Set the starting date and time (year, month (0-11), day, hours, minutes, seconds)
+    const startTime = new Date(2024, 1, 26, 21, 0, 0);
+
+    // Update the clock every second
+    function updateClock() {
+      const now = new Date();
+      const difference = now - startTime;
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('clock').innerHTML = `<span class="time-number">${days}</span>d 
+                                                     <span class="time-number">${hours}</span>h 
+                                                     <span class="time-number">${minutes}</span>m 
+                                                     <span class="time-number">${seconds}</span>s`;
+    }
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+
+    // Initial update
+    updateClock();
+  </script>
+
+
+<!----falling-->
+
+  <!-- Adjust the number of snowflakes by duplicating this div -->
+
+  
+  <!-- Duplicating this div -->
+  <div class="snowflake">
+    <img src="https://shorturl.at/behyC" alt="Snowflake">
+  </div>
+  <div class="snowflake">
+    <img src="https://shorturl.at/goxN7" alt="Snowflake">
+  </div>
+  <div class="snowflake">
+    <img src="https://shorturl.at/bhtHU" alt="Snowflake">
+  </div>
+  <div class="snowflake">
+    <img src="https://shorturl.at/vW056" alt="Snowflake">
+  </div>
+  <div class="snowflake">
+    <img src="https://shorturl.at/behyC" alt="Snowflake">
+  </div>
+  <div class="snowflake">
+    <img src="https://shorturl.at/goxN7" alt="Snowflake">
+  </div>
+  <div class="snowflake">
+    <img src="https://shorturl.at/bhtHU" alt="Snowflake">
+  </div>
+    <div class="snowflake">
+    <img src="https://shorturl.at/behyC" alt="Snowflake">
+  </div>
+  <div class="snowflake">
+    <img src="https://shorturl.at/goxN7" alt="Snowflake">
+  </div>
+  <!-- Add more snowflakes with different images as needed -->
+
+</body>
+
+</html>
